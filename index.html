@@ -193,8 +193,7 @@ footer{
 <body>
 
 <header>
-    <h1>Multiple Inheritance & Class Modifiers
-        (Sealed, Base, Final)</h1>
+    <h1>Polimorfisme dan Abstraksi</h1>
     <p>Nama: Nabilah Cahya Suci</p>
     <p>NIM: 251410018</p>
     <p>Kelas: SI2A</p>
@@ -202,44 +201,22 @@ footer{
 
 <div class="container">
 
-<h2>Pengertian Multiple Inheritance & Class Modifiers
-    (Sealed, Base, Final)</h2>
+<h2>Multiple Inheritance & Class Modifiers</h2>
 <p>
-Multiple Inheritance & Class Modifiers adalah konsep untuk mengatur pewarisan class. Multiple inheritance memungkinkan class punya banyak perilaku (mixin), sedangkan sealed, base, dan final membatasi penggunaan class agar lebih aman.
+Polimorfisme adalah konsep di mana objek dari subclass bisa diperlakukan sebagai superclass, sehingga satu method dapat memiliki perilaku berbeda. Abstraksi adalah konsep di mana class tidak bisa diinstansiasi langsung (abstract class) dan digunakan untuk mendefinisikan method yang harus diimplementasikan oleh subclass.
+</p>
+
+<h2>Multiple Inheritance dengan Mixin</h2>
+<p>
+Multiple inheritance adalah pewarisan dari lebih dari satu sumber untuk menggabungkan perilaku atau properti. Di Dart, hal ini dilakukan menggunakan mixin, sehingga satu class bisa memiliki beberapa fungsi tanpa harus mewarisi banyak class secara langsung.
 </p>
 
 <div class="topik-section">
-    <h3 class="topik-judul">🔹 Polimorfisme & Abstraksi</h3>
+    <h3 class="topik-judul">🔹 Studi Kasus Burung dan Bebek</h3>
     <div class="topik-penjelasan">
-    Polimorfisme: Objek subclass sebagai superclass
-    Abstract class: tidak bisa diinstansiasi, bisa punya method abstract/concrete
-    Interface: implicit di Dart, gunakan implements
-    Contoh cepat:
+    Mixin adalah fitur untuk menambahkan method atau fungsi ke dalam class tanpa menggunakan pewarisan (extends). Digunakan untuk berbagi kode agar lebih fleksibel dan reusable.
     </div>
     <!-- CODE DART (pratinjau) -->
-    <div class="code-block">
-abstract class Bentuk {
-      double hitungLuas();
-   }
-class Persegi implements Bentuk {
-  @override double hitungLuas() => sisi * sisi;
-}
-</div>
-
-
-<!-- ===== TOPIK 2 : OBJECT INSTANTIATION ===== -->
-<div class="topik-section">
-    <h3 class="topik-judul">🔹 Multiple Inheritance dengan Mixin</h3>
-    <div class="topik-penjelasan">
-    Multiple Inheritance dengan Mixin adalah cara agar satu class memiliki banyak perilaku dengan menambahkan mixin, tanpa mewarisi banyak class langsung, sehingga lebih fleksibel dan bisa digunakan ulang.
-    </div>
-
-<!-- ===== TOPIK 3 : CONSTRUCTORS ===== -->
-<div class="topik-section">
-    <h3 class="topik-judul">🔹 Studi Kasus: Burung dan Bebek</h3>
-    <div class="topik-penjelasan">
-    Inheritance: extends keyword
-    </div>
     <div class="code-block">
 // Nama  : Nabilah Cahya Suci 
 // NIM   : 251410018
@@ -270,18 +247,20 @@ void main() {
   duck.swim();
 }
     </div>
-    <button class="btn-popup" onclick="openDartPad(edfa30c6cb28ca36925c8bf1b934d925')">▶ Jalankan Kode di DartPad</button>
+    <!-- TOMBOL IFRAME -->
+    <button class="btn-popup" onclick="openDartPad('edfa30c6cb28ca36925c8bf1b934d925')">▶ Jalankan Kode di DartPad</button>
 </div>
 
-<!-- ===== TOPIK 4 : MAHASISWA (PRACTICE) ===== -->
+
+<!-- ===== TOPIK 2 : OBJECT INSTANTIATION ===== -->
 <div class="topik-section">
-    <h3 class="topik-judul">🔹Studi Kasus: mixin dengan state</h3>
+    <h3 class="topik-judul">🔹 Studi Kasus Mixin dengan State</h3>
     <div class="topik-penjelasan">
-    Referensi parent bisa menampung objek child. Method yang dipanggil sesuai objek asli (runtime).
+    Mixin tidak hanya berisi method, tetapi juga bisa memiliki state (variabel). State ini bisa digunakan untuk menyimpan dan mengelola kondisi dalam class yang menggunakan mixin.
     </div>
     <div class="code-block">
-// Nama : Nabilah cahya suci
-// NIM  : 251410018
+// Nama  : Nabilah Cahya Suci 
+// NIM   : 251410018
 // Kelas : SI2A
 
 mixin CanFly {
@@ -365,35 +344,24 @@ void main() {
   airplane.land();
 }
     </div>
-    <button class="btn-popup" onclick="openDartPad('b0269f5cd7e2b04109761c6bad08b1bb)">▶ Jalankan Kode di DartPad</button>
+    <button class="btn-popup" onclick="openDartPad('b0269f5cd7e2b04109761c6bad08b1bb')">▶ Jalankan Kode di DartPad</button>
 </div>
 
-<!-- ===== TOPIK 5 : ENCAPSULATION ===== -->
-<div class="topik-section">
-    <h3 class="topik-judul">🔹 Pengantar Class Modifiers</h3>
-    <div class="topik-penjelasan">
-    Apa itu? Keyword untuk mengontrol bagaimana class dapat digunakan
-Tujuan:
-i. Kontrol inheritance/implementasi
-ii. Jaminan keamanan tipe
-iii. Desain API yang lebih ekspresif
-Macam-macam: sealed , base , final , interface (Dart 3.0+)
-    </div>
-   
+<h2>Pengantar Class Modifiers</h2>
+<p>
+Class modifiers adalah keyword (sealed, base, final) untuk mengatur bagaimana class digunakan atau diwariskan. Tujuannya agar kode lebih aman, terstruktur, dan terkontrol.
+</p>
 
-<!-- ===== TOPIK 6 : THIS KEYWORD ===== -->
+<!-- ===== TOPIK 3 : CONSTRUCTORS ===== -->
 <div class="topik-section">
     <h3 class="topik-judul">🔹 Sealed Class</h3>
     <div class="topik-penjelasan">
-    Fitur
-    Tidak bisa id-ectend atau di-implement dar luar library
-    Membatasi hierarki tipe yang diketahui saat compile-time
-    Perfect untuk pattern matching
+    Sealed class adalah class yang hanya bisa diwariskan di dalam file yang sama. Digunakan untuk membatasi turunan agar lebih aman dan terkontrol.
     </div>
     <div class="code-block">
-//Nama: Nabilah cahya suci
-//Nim: 251410018
-//Kelas: SI2A
+// Nama  : Nabilah Cahya Suci 
+// NIM   : 251410018
+// Kelas : SI2A
 
 sealed class ApiResponse {
   const ApiResponse();
@@ -418,18 +386,214 @@ void main() {
   handle(const ErrorResponse("Terjadi kesalahan"));
 }
     </div>
-    <button class="btn-popup" onclick="openDartPad('931a430e3bba4ae4b2e6daaa738c3fcf/edit')">▶ Lihatn</button>
+    <button class="btn-popup" onclick="openDartPad('e1d1198da6c39809c0a18399aca647fc')">▶ Lihat Capture</button>
+</div>
+
+<!-- ===== TOPIK 4 : MAHASISWA (PRACTICE) ===== -->
+<div class="topik-section">
+    <h3 class="topik-judul">🔹 Keuntungan Sealed Class</h3>
+    <div class="topik-penjelasan">
+    Keuntungan dari sealed class adalah dapat membatasi pewarisan hanya dalam satu file, sehingga lebih aman dan mudah dikontrol. Selain itu, semua kemungkinan turunan class sudah diketahui, sehingga membantu mengurangi kesalahan saat program dijalankan dan membuat kode lebih terstruktur.
+    </div>
+    <div class="code-block">
+// Nama  : Nabilah Cahya Suci 
+// NIM   : 251410018
+// Kelas : SI2A
+
+void handleResponse(ApiResponse response) {
+  switch (response) {
+    case Success():
+      print("Success: ${(response as Success).message}");
+      break;
+    case Error():
+      print("Error: ${(response as Error).errorMessage}");
+      break;
+  }
+}
+void main() {
+  handleResponse(Success("Data berhasil"));
+  handleResponse(Error("Terjadi kesalahan"));
+}
+sealed class ApiResponse {}
+class Success extends ApiResponse {
+  final String message;
+  Success(this.message);
+}
+class Error extends ApiResponse {
+  final String errorMessage;
+  Error(this.errorMessage);
+}
+    </div>
+    <button class="btn-popup" onclick="openDartPad('e1d1198da6c39809c0a18399aca647fc')">▶ Lihat Capture</button>
+</div>
+
+<!-- ===== TOPIK 5 : ENCAPSULATION ===== -->
+<div class="topik-section">
+    <h3 class="topik-judul">🔹 Base Class</h3>
+    <div class="topik-penjelasan">
+    Base class adalah class yang bisa diwariskan menggunakan extends, tetapi tidak bisa di-implement. Tujuannya agar pewarisan tetap terkontrol dan hanya menggunakan satu cara, sehingga kode lebih konsisten dan terstruktur.
+    </div>
+    <div class="code-block">
+// Nama  : Nabilah Cahya Suci 
+// NIM   : 251410018
+// Kelas : SI2A
+
+base class Animal {
+  void speak() {
+    print("Hewan bersuara...");
+  }
+}
+base class Dog extends Animal {
+  @override
+  void speak() {
+    print("woof woff!");
+  }
+}
+void main() {
+  Animal myDog = Dog();
+  myDog.speak();
+}
+    </div>
+    <button class="btn-popup" onclick="openDartPad('d9a5e6b6a075b262ba057ce838cd4e05')">▶ Lihat Capture</button>
 </div>
 
 <div class="topik-section">
-    <h3 class="topik-judul">🔹 Keuntungan sealed class</h3>
+    <h3 class="topik-judul">🔹 Kapan Menggunakan Base Class</h3>
     <div class="topik-penjelasan">
-    Keuntungan
-    Exhaustive checking: Compiler tahu semua kemungkinan subclass
-    Pattern matching: Switch case yang aman
-    Documentation: Jelas hierarki terbatas
+    penggunaan base class, misalnya class Animal yang diturunkan menjadi Dog dan Cat menggunakan extends. Setiap turunan bisa memiliki perilaku berbeda, tetapi tetap mengikuti struktur dari base class, sehingga kode lebih rapi dan terorganisir.
     </div>
-  
+    <div class="code-block">
+// Nama  : Nabilah Cahya Suci 
+// NIM   : 251410018
+// Kelas : SI2A
+
+base class Animal {
+  void speak() {
+    print("Hewan bersuara...");
+  }
+}
+base class Dog extends Animal {
+  @override
+  void speak() {
+    print("Woof!");
+  }
+}
+void main() {
+  Animal animal = Dog();
+  animal.speak();
+}
+    </div>
+    <button class="btn-popup" onclick="openDartPad('d9a5e6b6a075b262ba057ce838cd4e05')">▶ Lihat Capture</button>
+</div>
+
+<div class="topik-section">
+    <h3 class="topik-judul">🔹 Final Class</h3>
+    <div class="topik-penjelasan">
+    Final class adalah class yang tidak bisa diwariskan lagi (tidak bisa di-extend atau di-implement). Tujuannya untuk “mengunci” class agar tidak diubah atau diturunkan, sehingga kode lebih aman dan stabil.
+    </div>
+    <div class="code-block">
+// Nama  : Nabilah Cahya Suci 
+// NIM   : 251410018
+// Kelas : SI2A
+
+final class Settings {
+  final String theme;
+  final int fontSize;
+  Settings({required this.theme, required this.fontSize});
+  void showSettings() {
+    print("Theme: $theme, Font Size: $fontSize");
+  }
+}
+class CustomSettings {
+  final Settings settings;
+  CustomSettings(String theme, int fontSize)
+      : settings = Settings(theme: theme, fontSize: fontSize);
+  void showSettings() {
+    settings.showSettings();
+  }
+}
+void main() {
+  Settings settings = Settings(theme: "Dark", fontSize: 14);
+  settings.showSettings();
+  CustomSettings custom = CustomSettings("Dark", 14);
+  custom.showSettings();
+}
+    </div>
+    <button class="btn-popup" onclick="openDartPad('d9a5e6b6a075b262ba057ce838cd4e05')">▶ Lihat Capture</button>
+</div>
+
+<h2>Perbandingan Class Modifiers</h2>
+<p>
+<ul>
+  <li>gabungkan semua jadi paragraf laporan</li>
+  <ul>atau buatkan file Word siap kumpul</ul>     
+</ul>
+
+</p>
+
+<!-- ===== TOPIK 6 : THIS KEYWORD ===== -->
+<div class="topik-section">
+    <h3 class="topik-judul">🔹 Praktik 1: Polimorfisme dengan List</h3>
+    <div class="topik-penjelasan">
+    Gunakan List<Parent>
+    Isi dengan berbagai objek child
+    Loop dan jalankan method
+    </div>
+    <div class="code-block">
+// Nama : Nabilah Cahya Suci 
+// NIM     : 251410018
+// Kelas   : SI2A
+
+class Hewan {
+  void bersuara() => print('Hewan bersuara');
+}
+
+class Kucing extends Hewan {
+  @override
+  void bersuara() => print('Meong');
+}
+
+class Anjing extends Hewan {
+  @override
+  void bersuara() => print('Guk guk');
+}
+
+class Burung extends Hewan {
+  @override
+  void bersuara() => print('Cuit cuit');
+}
+
+void main() {
+  List<Hewan> daftarHewan = [
+    Kucing(),
+    Anjing(),
+    Burung(),
+  ];
+
+  for (var h in daftarHewan) {
+    h.bersuara();
+  }
+}
+    </div>
+    <button class="btn-popup" onclick="openDartPad('49a6bd7598d9252ae96117f5fae14f84')">▶ Jalankan Kode di DartPad</button>
+</div>
+
+<div class="topik-section">
+    <h3 class="topik-judul">🔹 Pengantar Abstraksi</h3>
+    <div class="topik-penjelasan">
+    Menyembunyikan detail dan hanya menampilkan fungsi penting.
+    </div>
+
+<!-- ===== TOPIK 7 : PRODUCT CLASS (KODE AWAL DARI SOAL) ===== -->
+<div class="topik-section">
+    <h3 class="topik-judul">🔹 Abstract Class</h3>
+    <div class="topik-penjelasan">
+     Tidak bisa dibuat objek langsung
+     Bisa punya:
+     Method abstract (tanpa isi)
+     Method biasa (dengan isi)
+    </div>
+    <!-- CODE DART persis seperti di soal: class Product dan main -->
     <div class="code-block">
 // Nama  : Nabilah Cahya Suci 
 // NIM   : 251410018
@@ -462,56 +626,10 @@ void main() {
     <button class="btn-popup" onclick="openDartPad('b2c053c4983622642029a46500c807a3')">▶ Jalankan Kode di DartPad</button>
 </div>
 
-
-<!-- ===== TOPIK 7 : PRODUCT CLASS (KODE AWAL DARI SOAL) ===== -->
 <div class="topik-section">
-    <h3 class="topik-judul">🔹 Base class</h3>
+    <h3 class="topik-judul">🔹 Abstract Methoad</h3>
     <div class="topik-penjelasan">
-     Fitur:
-     Bisa di-extend, tapi tidak bisa di-implement
-     Memastikan pewarisan dengan extends , bukan implements
-     Berguna untuk library yang ingin mengontrol inheritance
-    </div>
-    <!-- CODE DART persis seperti di soal: class Product dan main -->
-    <div class="code-block">
-// Nama  : Nabilah Cahya Suci 
-// NIM   : 251410018
-// Kelas : SI2A
-
-abstract class Kendaraan {
-  String? merk;
-
-  void start(); // abstract
-
-  void stop() {
-    print('Kendaraan berhenti');
-  }
-}
-
-class Mobil extends Kendaraan {
-  @override
-  void start() {
-    print('Mobil $merk menyala');
-  }
-}
-
-void main() {
-  Mobil m = Mobil();
-  m.merk = "Toyota";
-  m.start();
-  m.stop();
-}
-    </div>
-    <button class="btn-popup" onclick="openDartPad('b2c053c4983622642029a46500c807a')">▶ Jalankan Kode di DartPad</button>
-</div>
-
-<div class="topik-section">
-    <h3 class="topik-judul">🔹 kapan menggunakan Base class</h3>
-    <div class="topik-penjelasan">
-    saat ingin membuat hierarki yang hanya bisa di-extend
-    saat ingin menjaga struktur class tetap konsisten
-    saat ingin Mencegah implements yang tidak sesuai
-    saat membutuhkan kontrol penuh pada class turunan
+       Abstract method adalah method yang tidak punya isi dan harus diisi oleh class turunan.
     </div>
     <div class="code-block">
 // Nama  : Nabilah Cahya Suci 
@@ -543,12 +661,9 @@ void main() {
 </div>
 
 <div class="topik-section">
-    <h3 class="topik-judul">🔹 Final Class</h3>
+    <h3 class="topik-judul">🔹 Interface di Dark</h3>
     <div class="topik-penjelasan">
-   Fitur:
-   Bisa di-extend, tapi tidak bisa di-implement
-   Memastikan pewarisan dengan extends , bukan implements
-   Berguna untuk library yang ingin mengontrol inheritance
+   Interface di Dart adalah kontrak/aturan yang berisi method yang harus diimplementasikan oleh class lain.
     </div>
     <!-- CODE DART (pratinjau) -->
     <div class="code-block">
@@ -584,20 +699,36 @@ void main() {
 
 <!-- ===== TOPIK 8 : HEWAN CLASS ===== -->
 <div class="topik-section">
-    <h3 class="topik-judul">🔹 Perbedaan Class Modifiers</h3>
+    <h3 class="topik-judul">🔹 Static Member</h3>
     <div class="topik-penjelasan">
-    Sealed: Hanya bisa di-extend di dalam file yang sama; tidak bisa di-extend atau di-implement di luar library.
-    base: Bisa di-extend di luar library, tetapi tidak bisa di-implement (hanya mendukung pewarisan).
-    final: Bisa di-extend atau di-implement di dalam file yang sama, namun keduanya dilarang dilakukan di luar library.
-    default:Tidak memiliki batasan; bebas untuk di-extend maupun di-implement baik di dalam maupun di luar library.
+        Milik class, bukan objek Dipanggil langsung dari class
     </div>
-    
+    <div class="code-block">
+// Nama  : Nabilah Cahya Suci 
+// NIM   : 251410018
+// Kelas : SI2A
+
+class MathUtils {
+  static double pi = 3.14;
+
+  static int add(int x, int y) {
+    return x + y;
+  }
+}
+
+void main() {
+  print(MathUtils.pi);
+  print(MathUtils.add(10, 20));
+}
+    </div>
+    <button class="btn-popup" onclick="openDartPad('839e8b8b635afd6f9baaa7a389d2011e')">▶ Jalankan Kode di DartPad</button>
+</div>
+
 <div class="topik-section">
-    <h3 class="topik-judul">🔹 Praktik 1-Sealed class dengan pattern matching</h3>
+    <h3 class="topik-judul">🔹 Praktik 2: Sistem Pembayaran</h3>
     <div class="topik-penjelasan">
-    Sealed class memungkinkan semua subclass diketahui dalam satu file sehingga dengan pattern matching setiap kondisi bisa diperiksa dan ditangani dengan jelas.
-   
-  </div>
+    Sistem pembayaran adalah penerapan konsep abstraksi dan polimorfisme dalam OOP, dimana dibuat satu class sebagai dasar (template) dengan method `bayar()`, lalu berbagai jenis pembayaran seperti kartu kredit, e-wallet, dan tunai mengimplementasikan method tersebut dengan cara yang berbeda. Dengan begitu, satu method yang sama dapat digunakan untuk berbagai objek dengan perilaku yang berbeda.
+    </div>
 
     <div class="code-block">
 // Nama  : Nabilah Cahya Suci 
@@ -645,9 +776,9 @@ void main() {
 </div>
 
 <div class="topik-section">
-    <h3 class="topik-judul">🔹 Studi Kasus: Sistem State Management</h3>
+    <h3 class="topik-judul">🔹 Studi Kasus: Sistem Bentuk Geometri</h3>
     <div class="topik-penjelasan">
-    State Management adalah cara mengatur kondisi aplikasi (loading, success, error) dengan sealed class agar tiap state jelas.
+    Sistem bentuk geometri adalah contoh penerapan abstraksi dan polimorfisme dalam OOP, dimana dibuat satu class dasar (misalnya Bentuk) yang memiliki method umum seperti hitungLuas() dan hitungKeliling(). Kemudian, setiap bentuk seperti persegi dan lingkaran akan mengimplementasikan method tersebut dengan cara yang berbeda
     </div>
 
     <div class="code-block">
@@ -709,24 +840,20 @@ void main() {
 
 
 <!-- KESIMPULAN -->
-<h2>Ringkasan</h2>
+<h2>Kesimpulan</h2>
 <p>
-Ringkasan
-Sealed: Hierarki tertutup & aman untuk pattern matching.
-Base: Hanya bisa di-extend (tutup akses implement).
-Final: Segel total (tidak bisa di-extend atau di-implement).
-Quick Guide:
-Sealed: rightarrow Untuk State atau Result terbatas.
-Base: rightarrow Untuk Framework atau Base Class.
-Final: rightarrow Untuk Utility atau Constant Class.
+Polimorfisme → satu method, banyak perilaku
+Abstraksi → menyederhanakan sistem
+Interface & abstract class → membuat struktur program lebih rapi
+Membuat kode lebih fleksibel, reusable, dan mudah dikembangkan
 </p>
 
 </div>
 
 <div class="topik-section">
-    <h3 class="topik-judul">🔹 Bonus base Class Repository</h3>
+    <h3 class="topik-judul">🔹 Bonus 1: Class Pekerja</h3>
     <div class="topik-penjelasan">
-    Repository menggunakan base class agar hanya bisa diwariskan dengan extends, bukan diimplementasikan sembarangan
+    Class Pekerja adalah sebuah class (biasanya abstract/interface) yang digunakan sebagai template atau dasar untuk berbagai jenis pekerjaan. Di dalamnya terdapat method umum seperti bekerja() yang harus diimplementasikan oleh class turunan seperti Programmer, Dokter, atau Guru.
     </div>
     <div class="code-block">
 // Nama  : Nabilah Cahya Suci 
@@ -776,9 +903,9 @@ void main() {
 </div>
 
 <div class="topik-section">
-    <h3 class="topik-judul">🔹 Bonus Final Class Mathutils</h3>
+    <h3 class="topik-judul">🔹 Bonus 2 Class Table</h3>
     <div class="topik-penjelasan">
-    MathUtils menggunakan final class karena hanya berisi fungsi utilitas (biasanya static) dan tidak perlu diwariskan.
+    Class Tablet adalah class yang merepresentasikan perangkat tablet dengan menggabungkan beberapa fungsi, seperti komputer, kamera, dan telepon. Biasanya, class ini dibuat dengan mewarisi (inherit) dari satu class utama (misalnya Komputer) dan menggunakan class lain sebagai tambahan fitur.
     </div>
     <div class="code-block">
 // Nama  : Nabilah Cahya Suci 
@@ -821,6 +948,166 @@ void main() {
   
     </div>
     <button class="btn-popup" onclick="openDartPad('3c4d2788f01d48b2947a3b6d6bfc957a')">▶ Jalankan Kode di DartPad</button>
+</div>
+
+<div class="topik-section">
+    <h3 class="topik-judul">🔹 Bonus 3 Class Mathutils</h3>
+    <div class="topik-penjelasan">
+    Class MathUtils adalah class yang berisi kumpulan fungsi-fungsi matematika (utility) seperti menghitung faktorial, mengecek bilangan prima, menghitung rata-rata, dan lainnya. Biasanya method di dalamnya bersifat static, sehingga bisa digunakan langsung tanpa membuat objek.
+    </div>
+    <div class="code-block">
+// Nama  : Nabilah Cahya Suci 
+// NIM   : 251410018
+// Kelas : SI2A
+
+import 'dart:math';
+
+class MathUtils {
+  static final Random _random = Random();
+
+  static int faktorial(int n) {
+    if (n < 0) {
+      throw ArgumentError('n tidak boleh negatif');
+    }
+    if (n <= 1) return 1;
+    return n * faktorial(n - 1);
+  }
+
+  static bool isPrima(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i <= sqrt(n).toInt(); i++) {
+      if (n % i == 0) return false;
+    }
+    return true;
+  }
+
+  static double bulatkan(double angka, int desimal) {
+    double faktor = pow(10, desimal).toDouble();
+    return (angka * faktor).round() / faktor;
+  }
+
+  static int randomInt(int min, int max) {
+    if (min > max) {
+      throw ArgumentError('min tidak boleh lebih besar dari max');
+    }
+    return min + _random.nextInt(max - min + 1);
+  }
+
+  static double randomDouble(double min, double max) {
+    if (min > max) {
+      throw ArgumentError('min tidak boleh lebih besar dari max');
+    }
+    return min + _random.nextDouble() * (max - min);
+  }
+
+  static double rataRata(List<double> data) {
+    if (data.isEmpty) {
+      throw ArgumentError('List tidak boleh kosong');
+    }
+    double total = data.reduce((a, b) => a + b);
+    return total / data.length;
+  }
+
+  static double median(List<double> data) {
+    if (data.isEmpty) {
+      throw ArgumentError('List tidak boleh kosong');
+    }
+
+    List<double> sorted = List.from(data)..sort();
+    int n = sorted.length;
+
+    if (n % 2 == 1) {
+      return sorted[n ~/ 2];
+    } else {
+      return (sorted[n ~/ 2 - 1] + sorted[n ~/ 2]) / 2;
+    }
+  }
+}
+
+void main() {
+  print(MathUtils.faktorial(5));
+  print(MathUtils.isPrima(7));
+  print(MathUtils.bulatkan(3.14159, 2));
+  print(MathUtils.randomInt(1, 10));
+  print(MathUtils.randomDouble(1.0, 5.0));
+  print(MathUtils.rataRata([1, 2, 3, 4, 5]));
+  print(MathUtils.median([1, 2, 3, 4, 5]));
+}
+    </div>
+    <button class="btn-popup" onclick="openDartPad('cf24fa8828cc6560078ac2e5970a42f3')">▶ Jalankan Kode di DartPad</button>
+</div>
+
+<div class="topik-section">
+    <h3 class="topik-judul">🔹 Challenge</h3>
+    <div class="topik-penjelasan">
+    Challenge Media Player adalah latihan yang bertujuan untuk membuat sistem pemutar media dengan menerapkan konsep abstraksi dan interface. Dalam challenge ini dibuat abstract class MediaPlayer sebagai dasar, serta interface seperti Playable dan Pausable yang berisi fungsi play() dan pause().
+    </div>
+    <div class="code-block">
+// Nama  : Nabilah Cahya Suci 
+// NIM   : 251410018
+// Kelas : SI2A
+
+abstract class MediaPlayer {
+  void open();
+}
+
+abstract class Playable {
+  void play();
+}
+
+abstract class Pausable {
+  void pause();
+}
+
+class AudioPlayer extends MediaPlayer implements Playable, Pausable {
+  @override
+  void open() {
+    print("Audio dibuka");
+  }
+
+  @override
+  void play() {
+    print("Audio diputar");
+  }
+
+  @override
+  void pause() {
+    print("Audio dijeda");
+  }
+}
+
+class VideoPlayer extends MediaPlayer implements Playable, Pausable {
+  @override
+  void open() {
+    print("Video dibuka");
+  }
+
+  @override
+  void play() {
+    print("Video diputar");
+  }
+
+  @override
+  void pause() {
+    print("Video dijeda");
+  }
+}
+
+void main() {
+  AudioPlayer audio = AudioPlayer();
+  audio.open();
+  audio.play();
+  audio.pause();
+
+  print("");
+
+  VideoPlayer video = VideoPlayer();
+  video.open();
+  video.play();
+  video.pause();
+}
+    </div>
+    <button class="btn-popup" onclick="openDartPad('5525fed0b543a35c08bfa75d0c340cdf')">▶ Jalankan Kode di DartPad</button>
 </div>
 
 
